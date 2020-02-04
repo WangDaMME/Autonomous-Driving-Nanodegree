@@ -1,7 +1,6 @@
 # Autonomous-Driving-Nanodegree
 
 
-<div="content">
 ### Sobel Gradient
 Canny edge Detection gives us a lot edges on scenery, cars, etc ended up discarding.
 Using Sobel Gradient to detect vertical lines as lanes.
@@ -12,3 +11,6 @@ Using Sobel Gradient to detect vertical lines as lanes.
   <li> Combine thresholds for selection for pixels where both the xx and yy gradients meet the threshold criteria, or the gradient magnitude and direction are both within their threshold values.
 </ul>
 </div>
+### HSV Color Space
+S Chanel is more robust for shadows (light contrast conditions) and differnt colors in pavement.
+Combined with Sobel gradient,  It's reliable to detect different colors of lane lines under varying degrees of daylight and shadow.
