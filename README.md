@@ -1,23 +1,31 @@
-### :checkered_flag: Project 1: Finding Lane Lines on the Road
+## :checkered_flag: Project 1: Finding Lane Lines on the Road
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+
+<img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
 <hr>
 Key Concepts: Computer Vision, OpenCV
 <hr>
+<p3> Overview </p3>
+This project aims to identify the lane lines on the road with Computer Vision techniques when the camera is used. Following the pipeline I developed in §Reflection, the effect will first tested on different individual images and later apply the result to a video stream (really just a series of images).
 
-# Overview
-
-In this project, you will use the tools you learned about in the lesson to identify lane lines on the road. You can develop your pipeline on a series of individual images, and later apply the result to a video stream (really just a series of images). Check out the video clip "raw-lines-example.mp4" (also contained in this repository) to see what the output should look like after using the helper functions below.
-
-Once you have a result that looks roughly like "raw-lines-example.mp4", you'll need to get creative and try to average and/or extrapolate the line segments you've detected to map out the full extent of the lane lines. You can see an example of the result you're going for in the video "P1_example.mp4". Ultimately, you would like to draw just one line for the left side of the lane, and one for the right.
-
-In addition to implementing code, there is a brief writeup to complete. The writeup should be completed in a separate file, which can be either a markdown file or a pdf document. There is a write up template that can be used to guide the writing process. Completing both the code in the Ipython notebook and the writeup template will cover all of the rubric points for this project.
-
-Let's have a look at our first image called 'test_images/solidWhiteRight.jpg'. Run the 2 cells below (hit Shift-Enter or the "play" button above) to display the image.
+<p3> Overview </p3>
 
 
-Workspace Users Start Here:
-In this project, you will be writing code to identify lane lines on the road, first in an image, and later in a video stream (really just a series of images). To complete this project you will use the tools you learned about in the lesson, and build upon them.
 
-Your first goal is to write code including a series of steps (pipeline) that identify and draw the lane lines on a few test images. Once you can successfully identify the lines in an image, you can cut and paste your code into the block provided to run on a video stream.
+
+### Reflection
+
+### 1. Describe the pipeline. As part of the description, explain how you modified the draw_lines() function.
+
+My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+
+If you'd like to include images to show how the pipeline works, here is how to include an image: 
+
+![alt text][image1]
+
+
 
 You will then refine your pipeline with parameter tuning and by averaging and extrapolating the lines.
 
