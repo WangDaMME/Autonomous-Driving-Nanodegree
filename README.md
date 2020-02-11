@@ -25,6 +25,7 @@ My pipeline consisted of 8 steps.
    <li> Save the result in the output directory.
 </ol>
 
+
 #### <u> Improvement on the pipeline </u>
 
 You will then refine your pipeline with parameter tuning and by averaging and extrapolating the lines.
@@ -33,10 +34,6 @@ Finally, you'll make a brief writeup report. The workspace github repository has
 
 Have a look at the video clip called "P1_example.mp4" in the repository to see an example of what your final output should look like. Two videos are provided for you to run your code on. These are called "solidWhiteRight.mp4" and solidYellowLeft.mp4".
 
-
-### 1. Describe the pipeline, ie. draw_lines() function.
-
----
 
 ### Rubric
 
