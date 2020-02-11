@@ -23,7 +23,7 @@ My pipeline consisted of 8 steps.
    <li> Implement Hough Transformation to identify lines, containing the endpoints (x1, y1, x2, y2) of all line segments.(cv2.HoughLinesP)
    <li> Show result lines overlaying on original images (cv2.addWeighted)
    <li> Save the result in the output directory.
-</ul>
+</ol>
 
 #### Improvement on the pipeline.
 
