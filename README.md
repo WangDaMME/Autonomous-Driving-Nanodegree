@@ -25,7 +25,7 @@ My pipeline consisted of 8 steps.
    <li> Save the result in the output directory.
 </ol>
 
-#### Improvement on the pipeline.
+#### <u> Improvement on the pipeline </u>
 
 You will then refine your pipeline with parameter tuning and by averaging and extrapolating the lines.
 
