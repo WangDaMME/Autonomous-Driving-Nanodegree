@@ -51,10 +51,7 @@ Placeholder : Extrapolate line - Full extent image
 4. The pipeline depends on the light contrast condition to some extent. When lane lines are in or even overlayed by shadows, these sections will not be easily detected by simply convering the image to grayscale. 
 
 ### 3. Suggested Improvements.
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+In the challenge section, I modified the pipeline to be more generalized for different size of images and videos and maske the quadrilateral region based on the proportion of the image.To improve the robustness for lighting contrast, images can be converted into HSV color other than RGB. To improve the robustness of quadrilateral masking, it might be worth thinking to set a random size region first and see if the lines detected by Hough Transform reach certain threshold. If not, updating the shape of region by increasing with a certain step value untill it fails and breaks when the region coordinates reach predefined maximum values. To reduce the visual effect of vibrating/flying lines, an algorithm can be developed to compare the slopes between consecutive frame and make sure changes are in expected interval, ±10%.
 
 ### Rubric
 ```
