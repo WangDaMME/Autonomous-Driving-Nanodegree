@@ -9,6 +9,11 @@ Key Concepts: Computer Vision, OpenCV
 When we drive, the lane lines on the road act as our constant reference for where to steer the vehicle. Naturally, one of the first things we'd like to do is to detect lane lines using an algorithm.
 This project aims to automatically identify the lane lines on the road using Computer Vision techniques from camera information. Following the pipeline I developed in §Reflection, the effect will first tested on different individual images and later apply the result to a video stream (really just a series of images).
 
+### Results
+1. Placeholder  - Images Test
+2. Video - Whitelane
+3. Video - Yellowlane
+
 ### Reflection
 
 ### 1. Describe the pipeline, ie. draw_lines() function.
