@@ -10,15 +10,17 @@ When we drive, the lane lines on the road act as our constant reference for wher
 This project aims to automatically identify the lane lines on the road using Computer Vision techniques from camera information. Following the pipeline I developed in §Reflection, the effect will first tested on different individual images and later apply the result to a video stream (really just a series of images).
 
 ### Results
+```
 1. Placeholder  - Images Test
 2. Video - Whitelane
 3. Video - Yellowlane
+```
 
 ### Reflection
 
 ### 1. Describe the pipeline, ie. draw_lines() function.
 
-My pipeline consisted of 8 steps. 
+My pipeline consists of 8 steps. 
 <ol>
    <li> Read images from the directory. (matplotlib.image.imread)
    <li> Convert the images to the grayscale which returns only 1 color channel. (cv2.cvtColor)
@@ -34,14 +36,11 @@ My pipeline consisted of 8 steps.
 #### <u> Improvement on the pipeline </u>
 
 You will then refine your pipeline with parameter tuning and by averaging and extrapolating the lines.
+At this point,I have the detected Hough lines drawn onto the road, but in line segments. So, to identify the full extent of the lane marking, I need to define a line to run the full length of the visible lane based on the line segments from the Hough Transformation. First, I take down endpoints (x1, y1, x2, y2) for every line segments and caculate the line slope ((y2-y1)/(x2-x1)) to classify which segments are part of the left line vs. the right line. Then, I average the position of each of the lines , get the average slope (k) and average intersection (b), and extrapolate to the top and bottom of the lane.
 
-Finally, you'll make a brief writeup report. The workspace github repository has a writeup_template.md that can be used as a guide.
-
-Have a look at the video clip called "P1_example.mp4" in the repository to see an example of what your final output should look like. Two videos are provided for you to run your code on. These are called "solidWhiteRight.mp4" and solidYellowLeft.mp4".
-
-
-### Rubric
-
+```
+Placeholder : Extrapolate line - Full extent image
+```
 ### 2. Potential shortcomings.
 
 
@@ -56,8 +55,9 @@ A possible improvement would be to ...
 
 Another potential improvement could be to ...
 
-
+```
 ### Rubric
+```
 
 
 
