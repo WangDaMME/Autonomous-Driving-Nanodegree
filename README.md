@@ -45,11 +45,10 @@ Placeholder : Extrapolate line - Full extent image
 ```
 ### 2. Potential shortcomings.
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+1. One potential shortcoming would be the quadrilateral-masked region of interest is determined after we have seen the effects from test images.That means we assumed in advance that the region appears at the middle-bottom part of the image in a fixed order. Under the case that the camera is not mounted in a proper location, it will lead 2 line lanes to be out of the expected mask region.
+2. Another shortcoming could be my pipeline uses 2 straight lines (left and right) to represent the steering direction. However, it is not suitable for the curving sections.
+3. When using extrapolate/average method to get the full extent of lane, it is a little hard to tune the slope threshold value to an ideal value so that it can filter out the flying lines among all the endpoints we gathered.
+4. The pipeline depends on the light contrast condition to some extent. When lane lines are in or even overlayed by shadows, these sections will not be easily detected by simply convering the image to grayscale. 
 
 ### 3. Suggested Improvements.
 
