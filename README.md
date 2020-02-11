@@ -31,7 +31,9 @@ My pipeline consists of 8 steps.
    <li> Show result lines overlaying on original images (cv2.addWeighted)
    <li> Save the result in the output directory.
 </ol>
-
+```
+Placeholder : Pipeline process image
+```
 
 #### <u> Improvement on the pipeline </u>
 
