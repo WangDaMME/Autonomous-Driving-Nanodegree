@@ -1,8 +1,8 @@
 # :checkered_flag: Project 1: Finding Lane Lines on the Road
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
-<img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
 Key Concepts: Computer Vision, OpenCV
 <hr>
+<img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
 
 ### Overview 
 
@@ -10,9 +10,8 @@ When we drive, the lane lines on the road act as our constant reference for wher
 This project aims to automatically identify the lane lines on the road using Computer Vision techniques from camera information. Following the pipeline I developed in §Reflection, the effect will first tested on different individual images and later apply the result to a video stream (really just a series of images).
 
 ### Results
-```
-1. Placeholder  - Images Test
-2. Video - Whitelane
+1. Solid White Lane at the Right side
+![](CarND-LaneLines-P1/test_videos_output/solidWhiteRight.mp4)
 3. Video - Yellowlane
 ```
 
