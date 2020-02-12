@@ -55,6 +55,7 @@ At this point,I have the detected Hough lines drawn onto the road, but in line s
 <div align="center">
 <img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/CarND-LaneLines-P1/GIF_Result/Extrpolated.PNG" >
 </div>
+
 ### 2. Potential shortcomings.
 
 1. One potential shortcoming would be the quadrilateral-masked region of interest is determined after we have seen the effects from test images.That means we assumed in advance that the region appears at the middle-bottom part of the image in a fixed order. Under the case that the camera is not mounted in a proper location, it will lead 2 line lanes to be out of the expected mask region.
