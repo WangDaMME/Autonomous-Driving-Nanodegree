@@ -5,6 +5,7 @@ Key Concepts: Computer Vision, OpenCV
 
 <img src="examples/laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
 <hr>
+
 ### Overview 
 
 When we drive, the lane lines on the road act as our constant reference for where to steer the vehicle. Naturally, one of the first things we'd like to do is to detect lane lines using an algorithm.
@@ -12,10 +13,14 @@ This project aims to automatically identify the lane lines on the road using Com
 
 ### Results
 1. Solid White Lane at the Right side
+<div align="center">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/CarND-LaneLines-P1/GIF_Result/solidWhiteRight.gif" width="600" height="400">
+</div>
 
-![](CarND-LaneLines-P1/test_videos_output/solidWhiteRight.mp4)
-
-3. Video - Yellowlane
+2. Solid Yellow Lane at the Left side
+<div align="center">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/CarND-LaneLines-P1/GIF_Result/solidYellowLeft.gif" width="600" height="400">
+</div>
 
 
 ### Reflection
@@ -42,9 +47,14 @@ Placeholder : Pipeline process image
 You will then refine your pipeline with parameter tuning and by averaging and extrapolating the lines.
 At this point,I have the detected Hough lines drawn onto the road, but in line segments. So, to identify the full extent of the lane marking, I need to define a line to run the full length of the visible lane based on the line segments from the Hough Transformation. First, I take down endpoints (x1, y1, x2, y2) for every line segments and caculate the line slope ((y2-y1)/(x2-x1)) to classify which segments are part of the left line vs. the right line. Then, I average the position of each of the lines , get the average slope (k) and average intersection (b), and extrapolate to the top and bottom of the lane.
 
-```
-Placeholder : Extrapolate line - Full extent image
-```
+<i> Unextrapolated </i>
+<div align="center">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/CarND-LaneLines-P1/GIF_Result/Extrpolated.PNG" width="600" height="400">
+</div>
+<i> Extrapolated </i>
+<div align="center">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/CarND-LaneLines-P1/GIF_Result/Extrpolated.PNG" >
+</div>
 ### 2. Potential shortcomings.
 
 1. One potential shortcoming would be the quadrilateral-masked region of interest is determined after we have seen the effects from test images.That means we assumed in advance that the region appears at the middle-bottom part of the image in a fixed order. Under the case that the camera is not mounted in a proper location, it will lead 2 line lanes to be out of the expected mask region.
