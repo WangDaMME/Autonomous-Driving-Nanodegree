@@ -1,4 +1,5 @@
 import tensorflow as tf
+import math
 
 from tensorflow.examples.tutorials.mnist import input_data
 mnist=input_data.read_data_sets(",",one_hot=True, reshape=False)
@@ -49,9 +50,12 @@ with tf.Session() as sess:
     # Training Cycle
     for epoch in range(training_epochs):
         total_batch=int(mnist.train.num_examples/batch_size)
+        # total_batch=math.ceil(mnist.train.num_examples/batch_size)
         #loop over all batchesd
         for i in range(total_batch):
-            batch_x,batch_y=mnist.train.next_batch(batch_size) #return a subset of the training data
+            # batch_x:batch features, batch_y:batch_labels
+            batch_x,batch_y=mnist.train.next_batch(batch_size) #return a subset of the training data  
+                  
             #Run optimization op(backprop) and cosr op (to get loss value)
             sess.run(optimizer,feed_dict={x:batch_x,y:batch_y})
         # Display logs per epoch step
