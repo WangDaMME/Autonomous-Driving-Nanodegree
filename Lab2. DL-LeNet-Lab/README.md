@@ -1,6 +1,6 @@
-## Lab2 :checkered_flag: Project 1: Finding Lane Lines on the Road
+## Lab2: LeNet Lab - Classify 0-9 digits
 
-Key Concepts: Deep Learning, Convolutional Neural Network(CNN), LeNet Architecture, Max
+Key Concepts: Deep Learning, Convolutional Neural Network(CNN), LeNet Architecture, Max Pooling, Fully Connected Layer, Tensorflow
 <hr>
 
 ### Overview 
@@ -8,8 +8,7 @@ Key Concepts: Deep Learning, Convolutional Neural Network(CNN), LeNet Architectu
 In this Lab, You're now going to put together everything you've learned and implement the LeNet architecture using TensorFlow to classify 0-9 digits from 55000-5000-10000 (training-validation-testing) samples.
 
 
-
-### The Processing Stepos
+### The Processing Steps
 An MNIST image is initially 784 features (1D). If the data is not normalized from [0, 255] to [0, 1], normalize it. We reshape this to (28, 28, 1) (3D), and pad the image with 0s such that the height and width are 32 (centers digit further). Thus, the input shape going into the first convolutional layer is 32x32x1.
 
 Specs
