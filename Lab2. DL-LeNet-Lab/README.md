@@ -48,4 +48,5 @@ You'll return the result of the final fully connected layer from the LeNet funct
 5. Use Sklearn.utils to shuffle images: from sklearn.utils import shuffle
    X_train, y_train = shuffle(X_train, y_train)
 6. Flatten multi-D images to 1-D using flatten func: tf.contrib.layers.flatten
+7. tf.onehot(y,10)  # one_hot the labelsc
 
