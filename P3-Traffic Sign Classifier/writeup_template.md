@@ -1,10 +1,11 @@
-# **Traffic Sign Recognition** 
+# :checkered_flag: Project 3: Traffic Sign Classifier
 
-## Writeup
+Key Concepts: Machine Learning, Deep Learning, Tensorflow, LeNet Architecture, Computer Vision
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+<img src="examples/xxxxxx.jpg" width="480" alt="Combined Image" />
+<hr>
 
----
+### Overview 
 
 **Build a Traffic Sign Recognition Project**
 
