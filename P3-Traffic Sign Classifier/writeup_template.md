@@ -46,25 +46,39 @@ You're reading it! and here is a link to my [project code](https://github.com/ud
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+* The size of training set is <strong>34799</strong>
+* The size of the validation set is <strong>4410</strong>
+* The size of test set is <strong>12630</strong>
+* The shape of a traffic sign image is <strong>(32,32,3</strong>
+* The number of unique classes/labels in the data set is <strong>43</strong>
 
 #### 2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set. Below is bar charts showing how the data of each class is distributed in its own dataset.
 
-![alt text][image1]
-
+```
+1. show example from each classes
+2 Barcharts saved in the folder
+```
 ### Design and Test a Model Architecture
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because ...
+Firstly from the bar charts above, I realize the number of sign images per label colected in the given GTSRB - (German Traffic sign datasets) is not distributed evenly. So I generated the fake images for the classess which is less than 800 samples by randomly picking one of 4 <strong)Augumentation</strong> techniques(rotation, translation, add guassian noise and increase rightness). The training set then is expanded to <color='red'> ??? <color='red'> samples with a more balanced distribution shown below.
 
+```
+1. show example evenly-distributed bar chart
+```
 Here is an example of a traffic sign image before and after grayscaling.
+
+Neural network architecture (is the network over or underfitting?)
+Play around preprocessing techniques (normalization, rgb to grayscale, etc)
+Number of examples per label (some have more than others).
+Generate fake data.
+Here is an example of a published baseline model on this problem. It's not required to be familiar with the approach used in the paper but, it's good practice to try to read papers like these.
+
+Data Augmentation
+Augmenting the training set to generate some fake images might help improve model performance by distributing each class of image evenly. Common data augmentation techniques include rotation, translation, zoom, flips, and/or color perturbation. These techniques can be used individually or combined.
 
 ![alt text][image2]
 
