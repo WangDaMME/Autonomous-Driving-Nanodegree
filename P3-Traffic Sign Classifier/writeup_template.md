@@ -64,21 +64,20 @@ Here is an exploratory visualization of the data set. Below is bar charts showin
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-Firstly from the bar charts above, I realize the number of sign images per label colected in the given GTSRB - (German Traffic sign datasets) is not distributed evenly. So I generated the fake images for the classess which is less than 800 samples by randomly picking one of 4 <strong)Augumentation</strong> techniques(rotation, translation, add guassian noise and increase rightness). The training set then is expanded to <color='red'> ??? <color='red'> samples with a more balanced distribution shown below.
+1.1 Firstly from the bar charts above, I realize the number of sign images per label colected in the given GTSRB - (German Traffic sign datasets) is not distributed evenly. So I generated the fake images for the classess which is less than 800 samples by randomly picking one of 4 <strong)Augumentation</strong> techniques(rotation, translation, add guassian noise and increase rightness). The training set then is expanded to <font color='red'> ??? </font color='red'> samples with a more balanced distribution shown below.
 
 ```
 1. show example evenly-distributed bar chart
+
 ```
-Here is an example of a traffic sign image before and after grayscaling.
+Here is an example of a traffic sign image after Augmentation.
 
-Neural network architecture (is the network over or underfitting?)
-Play around preprocessing techniques (normalization, rgb to grayscale, etc)
-Number of examples per label (some have more than others).
-Generate fake data.
-Here is an example of a published baseline model on this problem. It's not required to be familiar with the approach used in the paper but, it's good practice to try to read papers like these.
+```
+1. show Augmentated  
+```
+1.2 Then with the expansion of the training set, I split smaples from the training set to validation set to keep the ideal ratio of Training data VS Validation data as 80% : 20%.
 
-Data Augmentation
-Augmenting the training set to generate some fake images might help improve model performance by distributing each class of image evenly. Common data augmentation techniques include rotation, translation, zoom, flips, and/or color perturbation. These techniques can be used individually or combined.
+1.3 Then I gary scale normalizded Converting a three-channel RGB image to a 1-channel grayscale image is often not only sufficient for classification tasks but also less computationally expensive. The good news is that we need do nothing more than apply a simple dot product to get the desired result.
 
 ![alt text][image2]
 
@@ -116,6 +115,8 @@ My final model consisted of the following layers:
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I used an ....
+To train the model, Initially I used same Lenet Modle as given in class tutorial, but validation accuracy of model was very low so To optimize it I have tried various approach to increase accuracy like adding droupout at fully connected layer, also changing keep probability value, additon of dropout at convolution 1 layer with different keep probability also ADAM optimizer gives better accuracy than SGD optimizer.
+
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
