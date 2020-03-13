@@ -113,7 +113,7 @@ To train the model, I refer to Lenet5 architecture and add two dropout layers af
 
 | Hyperparameters         		|     Values	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Epochs         		| 45   							| 
+| Epochs         		| 50   							| 
 | Batch_size    	| 100	|
 | learning_rate					|	 0.001											|
 | keep_prob	      	| 0.75 				|
@@ -122,9 +122,9 @@ To train the model, I refer to Lenet5 architecture and add two dropout layers af
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 98.5%
+* validation set accuracy of 94.7% 
+* test set accuracy of 89.75%
 
 Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 
@@ -158,18 +158,18 @@ placeholder for 12 images I imported
 ```
 
 
-The model was able to correctly guess 4 of the 12 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 12 traffic signs, which gives an accuracy of 91.7%. 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 
-Use the first image as an instance, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+Use the first image labeled 17 as an instance, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .728         			| 17: No entry   									| 
+| .271     				| 14: Stop									|
+|  1.76e-6					| 33: Turn Right Ahead											|
+| .1.19e-11	      			| 37: Go straight or left					 				|
+| .1.63e-13				    | 15: No vehicles      							|
 
