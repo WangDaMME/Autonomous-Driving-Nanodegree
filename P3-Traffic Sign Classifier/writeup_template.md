@@ -77,17 +77,8 @@ Here is an example of a traffic sign image after Augmentation.
 ```
 1.2 Then with the expansion of the training set, I split smaples from the training set to validation set to keep the ideal ratio of Training data VS Validation data as 80% : 20%.
 
-1.3 Then I gary scale normalizded Converting a three-channel RGB image to a 1-channel grayscale image is often not only sufficient for classification tasks but also less computationally expensive. The good news is that we need do nothing more than apply a simple dot product to get the desired result.
-
+1.3 The normalization to iamges comes to the last step before putting them into Network. With mean=0 and equal variance, it is critical to make the ranges of our distributions of feature values be consistent for each feature, and thus the learning rate would cause corrections in each dimension that would differ from one another. To grayscale or not, there is always a nebulous saying that the grayscaled images are less computational expensive and good enough if only expecting the gradient of object to extract features. So, I separate 'the num_channel' from input variables and test with both RGB and Grayscale. To Lenet-5, it seems the result of grayscale is a little better than that of RGB, otherwise, you need to increase training epochs of rgb to reach the same standard of result.
 ![alt text][image2]
-
-As a last step, I normalized the image data because ...
-
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
 
 ![alt text][image3]
 
@@ -100,15 +91,19 @@ My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Input         		| 32x32x1 RGB image   							| 
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
+| Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x6			|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
+| Flatten		|    outputs 400        									|
+| Fully connected		| output 120        									|
+| Dropout		| keep_prob=0.75        									|
+| Fully connected		| output 84        									|
+| Dropout		| keep_prob=0.75        									|
+| Fully connected		| output 43        									|
  
 
 
