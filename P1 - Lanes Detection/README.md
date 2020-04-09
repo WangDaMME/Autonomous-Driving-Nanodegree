@@ -19,7 +19,7 @@ This project aims to automatically identify the lane lines on the road using Com
 
 2. Solid Yellow Lane at the Left side
 <div align="center">
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/CarND-LaneLines-P1/GIF_Result/solidYellowLeft.gif" width="480" height="320">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P1%20-%20Lanes Detection/GIF_Result/solidYellowLeft.gif" width="480" height="320">
 </div>
 
 
@@ -49,11 +49,11 @@ At this point,I have the detected Hough lines drawn onto the road, but in line s
 
 <i> Unextrapolated </i>
 <div align="center">
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/CarND-LaneLines-P1/GIF_Result/Unextrapolated.PNG" >
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P1%20-%20Lanes Detection/GIF_Result/Unextrapolated.PNG" >
 </div>
 <i> Extrapolated </i>
 <div align="center">
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/CarND-LaneLines-P1/GIF_Result/Extrpolated.PNG" >
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P1%20-%20Lanes Detection/GIF_Result/Extrpolated.PNG" >
 </div>
 
 ### 2. Potential shortcomings.
