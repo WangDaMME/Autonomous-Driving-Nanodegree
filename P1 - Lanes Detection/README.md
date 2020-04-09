@@ -14,7 +14,7 @@ This project aims to automatically identify the lane lines on the road using Com
 ### Results
 1. Solid White Lane at the Right side
 <div align="center">
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/CarND-LaneLines-P1/GIF_Result/solidWhiteRight.gif" width="480" height="320">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P1%20-%20Lanes Detection/GIF_Result/solidWhiteRight.gif" width="480" height="320">
 </div>
 
 2. Solid Yellow Lane at the Left side
