@@ -129,10 +129,10 @@ A well written README file can enhance your project and portfolio.  Develop your
 
 
 <div align="center">
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P4-Extended%20Kalman%20Filter/result_gif/Data1.gif" width="480" height="320">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P4-Extended%20Kalman%20Filter/result_gif/Data1.gif.gif" width="480" height="320">
 </div>
 
 
 <div align="center">
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P4-Extended%20Kalman%20Filter/result_gif/Data2.gif" width="480" height="320">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P4-Extended%20Kalman%20Filter/result_gif/Data2.gif.gif" width="480" height="320">
 </div>
