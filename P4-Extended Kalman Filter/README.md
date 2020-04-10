@@ -3,7 +3,7 @@
 
 Key Concepts: Sensor Fusion, Extended Kalman Filter, Tracking
 
-<img src="result_gif/Algorithm_Map.PNG" width="480" alt="Combined Image" />
+<img src="result_gif/Algorithm_Map.PNG" width="600" alt="Combined Image" />
 
 <hr>
 
@@ -16,12 +16,12 @@ The c++ src code covers 3 main steps for programming a Kalman Filter:
 
 <ul>
   <li> <b>intializing</b> intializing Kalman filter variables </li>
-  <li> <b>predicting</b> where our object is going to be after a time step, Δt </li>
-  <li> <b>updating</b> where our object is based on sensor measurements </li>
+  <li> <b>Motion Prediction</b> predicting where our object is going to be after a time step, Δt </li>
+  <li> <b>Measurement Update</b> updating where our object is based on sensor measurements </li>
 </ul>
 
 
-    .myrobot                           # Build My World Project 
+    src                                # source code
     ├── model                          # Model files 
     │   ├── Sensor_mobile
     │   │   ├── model.config          
