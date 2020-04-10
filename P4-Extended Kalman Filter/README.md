@@ -33,7 +33,7 @@ The c++ src code covers 3 main steps for programming a Kalman Filter:
     │
     │   ├── tools.cpp                  # define RMSE func, Jacobian func to linearize radar measurements
     │
-    │   ├── measurement_package.h       # define raw measurement data types
+    │   ├── measurement_package.h      # define raw measurement data types
     │
     |- data
     │   ├── obj_pose-laser-radar-synthetic-input.txt      
