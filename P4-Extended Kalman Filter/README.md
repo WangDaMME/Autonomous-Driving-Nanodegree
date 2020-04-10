@@ -11,38 +11,36 @@ Key Concepts: Sensor Fusion, Extended Kalman Filter, Tracking
 
 ### Overview 
 
-In this project, I implemented the Extended Kalman Filter algorithm to estimate the state of a moving object of interest, ie. a bicyle which travels around the vehicle with noisy lidar and radar measurements. To evaluate the performance of tracking, I calculated the RMSE value of each state and make sure that are lower than the tolerance outlined in the project rubric. 
+In this project, I implemented the Extended Kalman Filter algorithm to estimate the state of a moving object of interest, ie. a bicyle which travels around the vehicle with noisy lidar and radar measurements. To evaluate the performance of tracking, I calculated the RMSE (root mean square erro) value of each state and make sure that are lower than the tolerance outlined in the project rubric. 
 
 ### Code Structure
 The c++ src code covers 3 main steps for programming a Kalman Filter:
 
 <ul>
-  <li> <b>intializing</b> intializing Kalman filter variables </li>
-  <li> <b>Motion Prediction</b> predicting where our object is going to be after a time step, Δt </li>
-  <li> <b>Measurement Update</b> updating where our object is based on sensor measurements </li>
+  <li> <b>intializing</b> - intializing Kalman filter variables </li>
+  <li> <b>Motion Prediction</b> - predicting where our object is going to be after a time step, Δt </li>
+  <li> <b>Measurement Update</b> - updating where our object is based on sensor measurements </li>
 </ul>
 
 
-    src                                # source code
-    ├── model                          # Model files 
-    │   ├── Sensor_mobile
-    │   │   ├── model.config          
-    │   │   ├── model.sdf              # The world file si formatted using SDF, Simulation Description Format
-    │   ├── simple_arm_bot
-    │   │   ├── model.config
-    │   │   ├── model.sdf              # joint types,links, parent-child, poses
-    ├── script                         # Gazebo World plugin C++ script      
-    │   ├── hello.cpp                  # To interact with a world, model, sensor in Gazebo, you need plugin.
-    ├── world                          # Gazebo main World containing models 
-    │   ├── world2.sdf
-    │   ├── model.config
-    ├── build
-    ├── MakeLists.txt                  # Link Libraries 
-
-
-
-
-
+    |- src                             # source code folder
+    |
+    │   ├── main.cpp                   # receive data measurement, calls Kalman Filter func, calls RMSE func
+    │     
+    │   ├── FunctionEKF.cpp            # initialize the filter, calls Prediction func, calls Update func, via ekf_ instanse
+    │
+    │   ├── kalman_filter.cpp          # define Prediction func, Update func for lidar, Update func for radar
+    │
+    │   ├── tools.cpp                  # define RMSE func, Jacobian func to linearize radar measurements
+    │
+    │   ├── measurement_package.h       # define raw measurement data types
+    │
+    |- data
+    │   ├── obj_pose-laser-radar-synthetic-input.txt      
+    |   # R(Radar):  raw measurement data types sensor_type, rho_measured, phi_measured, rhodot_measured, timestamp, x_groundtruth, y_groundtruth, vxgroundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
+    |   # L(Lidar):  sensor_type, x_measured, y_measured, timestamp, x_groundtruth, y_groundtruth, vx_groundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
+    
+    
 This repository includes two files that can be used to set up and install [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems. For windows you can use either Docker, VMware, or even [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to install uWebSocketIO. Please see the uWebSocketIO Starter Guide page in the classroom within the EKF Project lesson for the required version and installation scripts.
 
 Once the install for uWebSocketIO is complete, the main program can be built and run by doing the following from the project top directory.
