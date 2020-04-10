@@ -1,9 +1,45 @@
-# Extended Kalman Filter Project Starter Code
-Self-Driving Car Engineer Nanodegree Program
+# :checkered_flag: Project 4: Extended Kalman Filter
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-In this project you will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower than the tolerance outlined in the project rubric. 
+Key Concepts: Sensor Fusion, Extended Kalman Filter, Tracking
 
-This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases)
+<img src="result_gif/Algorithm_Map.PNG" width="480" alt="Combined Image" />
+
+<hr>
+
+### Overview 
+
+In this project, I implemented the Extended Kalman Filter algorithm to estimate the state of a moving object of interest, ie. a bicyle which travels around the vehicle with noisy lidar and radar measurements. To evaluate the performance of tracking, I calculated the RMSE value of each state and make sure that are lower than the tolerance outlined in the project rubric. 
+
+### Code Structure
+The c++ src code covers 3 main steps for programming a Kalman Filter:
+
+<ul>
+  <li> <b>intializing</b> intializing Kalman filter variables </li>
+  <li> <b>predicting</b> where our object is going to be after a time step, Δt </li>
+  <li> <b>updating</b> where our object is based on sensor measurements </li>
+</ul>
+
+
+    .myrobot                           # Build My World Project 
+    ├── model                          # Model files 
+    │   ├── Sensor_mobile
+    │   │   ├── model.config          
+    │   │   ├── model.sdf              # The world file si formatted using SDF, Simulation Description Format
+    │   ├── simple_arm_bot
+    │   │   ├── model.config
+    │   │   ├── model.sdf              # joint types,links, parent-child, poses
+    ├── script                         # Gazebo World plugin C++ script      
+    │   ├── hello.cpp                  # To interact with a world, model, sensor in Gazebo, you need plugin.
+    ├── world                          # Gazebo main World containing models 
+    │   ├── world2.sdf
+    │   ├── model.config
+    ├── build
+    ├── MakeLists.txt                  # Link Libraries 
+
+
+
+
 
 This repository includes two files that can be used to set up and install [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems. For windows you can use either Docker, VMware, or even [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to install uWebSocketIO. Please see the uWebSocketIO Starter Guide page in the classroom within the EKF Project lesson for the required version and installation scripts.
 
@@ -70,9 +106,8 @@ using the following settings:
 * indent using spaces
 * set tab width to 2 spaces (keeps the matrices in source code aligned)
 
-## Code Style
+## File Structure
 
-Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
 
 ## Generating Additional Data
 
@@ -124,9 +159,9 @@ and how to install it.
 Regardless of the IDE used, every submitted project must
 still be compilable with cmake and make.
 
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+## Result Description
 
+Radar measurements are blue circles with an arrow pointing in the direction of the observed angle, and estimation markers are green triangles. The video below shows what the simulator looks like when a c++ script is using its Kalman filter to track the object. The simulator provides the script the measured data (either lidar or radar), and the script feeds back the measured estimation marker, and RMSE values from its Kalman fil
 
 <div align="center">
 <img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P4-Extended%20Kalman%20Filter/result_gif/Data1.gif.gif" width="480" height="320">
