@@ -3,7 +3,9 @@
 
 Key Concepts: Sensor Fusion, Extended Kalman Filter, Tracking
 
+<div align="center">
 <img src="result_gif/Algorithm_Map.PNG" width="600" alt="Combined Image" />
+</div>
 
 <hr>
 
