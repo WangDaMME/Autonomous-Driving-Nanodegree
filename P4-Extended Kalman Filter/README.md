@@ -3,10 +3,13 @@
 
 Key Concepts: Sensor Fusion, Extended Kalman Filter, Tracking
 
+
 <div align="center">
+  
 <img src="result_gif/Algorithm_Map.PNG" width="600" alt="Combined Image" />
 
 </div>
+
 
 The Kalman Filter algorithm will go through the following steps:
 
@@ -52,7 +55,9 @@ The c++ src code covers 3 main steps for programming a Kalman Filter:
     |   # R(Radar):  raw measurement data types sensor_type, rho_measured, phi_measured, rhodot_measured, timestamp, x_groundtruth, y_groundtruth, vxgroundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
     |   # L(Lidar):  sensor_type, x_measured, y_measured, timestamp, x_groundtruth, y_groundtruth, vx_groundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
     
- 
+
+
+
 This repository includes two files that can be used to set up and install [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems. For windows you can use either Docker, VMware, or even [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to install uWebSocketIO. Please see the uWebSocketIO Starter Guide page in the classroom within the EKF Project lesson for the required version and installation scripts.
 
 Once the install for uWebSocketIO is complete, the main program can be built and run by doing the following from the project top directory.
@@ -63,43 +68,19 @@ Once the install for uWebSocketIO is complete, the main program can be built and
 4. make
 5. ./ExtendedKF
 
-Tips for setting up your environment can be found in the classroom lesson for this project.
+### Dependencies
+Keep in mind that the minimum project dependency versions are:
 
-Note that the programs that need to be written to accomplish the project are src/FusionEKF.cpp, src/FusionEKF.h, kalman_filter.cpp, kalman_filter.h, tools.cpp, and tools.h
-
-The program main.cpp has already been filled out, but feel free to modify it.
-
-Here is the main protocol that main.cpp uses for uWebSocketIO in communicating with the simulator.
-
-
-INPUT: values provided by the simulator to the c++ program
-
-["sensor_measurement"] => the measurement that the simulator observed (either lidar or radar)
-
-
-OUTPUT: values provided by the c++ program to the simulator
-
-["estimate_x"] <= kalman filter estimated position x
-["estimate_y"] <= kalman filter estimated position y
-["rmse_x"]
-["rmse_y"]
-["rmse_vx"]
-["rmse_vy"]
-
----
-
-## Other Important Dependencies
-
-* cmake >= 3.5
-  * All OSes: [click here for installation instructions](https://cmake.org/install/)
-* make >= 4.1 (Linux, Mac), 3.81 (Windows)
-  * Linux: make is installed by default on most Linux distros
-  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
-  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
-* gcc/g++ >= 5.4
-  * Linux: gcc / g++ is installed by default on most Linux distros
-  * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
-  * Windows: recommend using [MinGW](http://www.mingw.org/)
+cmake: 3.5
+All OSes: click here for installation instructions
+make: 4.1
+Linux: make is installed by default on most Linux distros
+Mac: install Xcode command line tools to get make
+Windows: Click here for installation instructions
+gcc/g++: 5.4
+Linux: gcc / g++ is installed by default on most Linux distros
+Mac: same deal as make - install Xcode command line tools
+Windows: recommend using MinGW
 
 ## Basic Build Instructions
 
@@ -109,25 +90,6 @@ OUTPUT: values provided by the c++ program to the simulator
    * On windows, you may need to run: `cmake .. -G "Unix Makefiles" && make`
 4. Run it: `./ExtendedKF `
 
-## Editor Settings
-
-We've purposefully kept editor configuration files out of this repo in order to
-keep it as simple and environment agnostic as possible. However, we recommend
-using the following settings:
-
-* indent using spaces
-* set tab width to 2 spaces (keeps the matrices in source code aligned)
-
-## File Structure
-
-
-## Generating Additional Data
-
-This is optional!
-
-If you'd like to generate your own radar and lidar data, see the
-[utilities repo](https://github.com/udacity/CarND-Mercedes-SF-Utilities) for
-Matlab scripts that can generate additional data.
 
 ## Project Instructions and Rubric
 
@@ -180,6 +142,46 @@ Radar measurements are blue circles with an arrow pointing in the direction of t
 </div>
 
 
-<div align="center">
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P4-Extended%20Kalman%20Filter/result_gif/Data2.gif.gif" width="480" height="320">
+## Project Rubric
+<div>
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P4-Extended%20Kalman%20Filter/result_gif/Rubric1.PNG">
+
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P4-Extended%20Kalman%20Filter/result_gif/Rubric2.PNG">
 </div>
+
+
+## Other references
+
+uWebSocketIO Starter Guide
+This project involve using an open source package called uWebSocketIO. This package facilitates the same connection between the simulator and code that was used in the Term 1 Behavioral Cloning Project, but now with C++. The package does this by setting up a web socket server connection from the C++ program to the simulator, which acts as the host. In the project repository there are two scripts for installing uWebSocketIO - one for Linux and the other for macOS.
+
+Note: Only uWebSocketIO branch e94b6e1, which the scripts reference, is compatible with the package installation.
+
+Linux Installation:
+From the project repository directory run the script: install-ubuntu.sh
+
+Mac Installation:
+From the project repository directory run the script: install-mac.sh
+
+Some users report needing to use cmakepatch.txt which is automatically referenced and is also located in the project repository directory.
+
+Windows Installation
+Although it is possible to install uWebSocketIO to native Windows, the process is quite involved. Instead, you can use one of several Linux-like environments on Windows to install and run the package.
+
+Bash on Windows
+One of the newest features to Windows 10 users is an Ubuntu Bash environment that works great and is easy to setup and use. Here is a nice step by step guide for setting up the utility.
+
+We recommend using the newest version of Ubunut Bash 16.04, which is able to run the install-ubuntu.sh script without complications. The link here can help you check which version of Ubuntu Bash you are running, and also help you upgrade if you need to.
+
+Docker
+If you don't want to use Bash on Windows, or you don't have Windows 10, then you can use a virtual machine to run a Docker image that already contains all the project dependencies.
+
+First install Docker Toolbox for Windows.
+
+Next, launch the Docker Quickstart Terminal. The default Linux virtual environment should load up. You can test that Docker is setup correctly by running docker version and docker ps.
+
+You can enter a Docker image that has all the project dependencies by running:
+
+docker run -it -p 4567:4567 -v 'pwd':/work udacity/controls_kit:latest
+
+Once inside Docker you can clone over the GitHub project repositories and run the project from there.
