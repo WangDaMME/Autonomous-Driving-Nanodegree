@@ -5,13 +5,25 @@ Key Concepts: Sensor Fusion, Extended Kalman Filter, Tracking
 
 <div align="center">
 <img src="result_gif/Algorithm_Map.PNG" width="600" alt="Combined Image" />
+<center> Process Flow </center>
+  
+Imagine you are in a car equipped with sensors on the outside. The car sensors can detect objects moving around: for example, the sensors might detect a pedestrian, as described in the video, or even a bicycle. For variety, let's step through the Kalman Filter algorithm using the bicycle example.
+
+The Kalman Filter algorithm will go through the following steps:
+
+first measurement - the filter will receive initial measurements of the bicycle's position relative to the car. These measurements will come from a radar or lidar sensor.
+initialize state and covariance matrices - the filter will initialize the bicycle's position based on the first measurement.
+then the car will receive another sensor measurement after a time period \Delta{t}Δt.
+predict - the algorithm will predict where the bicycle will be after time \Delta{t}Δt. One basic way to predict the bicycle location after \Delta{t}Δt is to assume the bicycle's velocity is constant; thus the bicycle will have moved velocity * \Delta{t}Δt. In the extended Kalman filter lesson, we will assume the velocity is constant.
+update - the filter compares the "predicted" location with what the sensor measurement says. The predicted location and the measured location are combined to give an updated location. The Kalman filter will put more weight on either the predicted location or the measured location depending on the uncertainty of each value.
+then the car will receive another sensor measurement after a time period \Delta{t}Δt. The algorithm then does another predict and update step.
 </div>
 
 <hr>
 
 ### Overview 
 
-In this project, I implemented the Extended Kalman Filter algorithm to estimate the state of a moving object of interest, ie. a bicyle which travels around the vehicle with noisy lidar and radar measurements. To evaluate the performance of tracking, I calculated the RMSE (root mean square erro) value of each state and make sure that are lower than the tolerance outlined in the project rubric. 
+In this project, I implemented the Extended Kalman Filter algorithm to estimate and track the state of a moving object of interest, ie. a bicyle which travels around the vehicle with noisy lidar and radar measurements. To evaluate the performance of tracking, I calculated the RMSE (root mean square erro) value of each state and make sure that are lower than the tolerance outlined in the project rubric. 
 
 ### Code Structure
 The c++ src code covers 3 main steps for programming a Kalman Filter:
