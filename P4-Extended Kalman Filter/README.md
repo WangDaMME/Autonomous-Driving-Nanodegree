@@ -6,6 +6,8 @@ Key Concepts: Sensor Fusion, Extended Kalman Filter, Tracking
 <div align="center">
 <img src="result_gif/Algorithm_Map.PNG" width="600" alt="Combined Image" />
 
+</div>
+
 The Kalman Filter algorithm will go through the following steps:
 
 <ul>first measurement - the filter will receive initial measurements of the bicycle's position relative to the car. These measurements will come from a radar or lidar sensor.</ul>
@@ -14,7 +16,6 @@ then the car will receive another sensor measurement after a time period \Delta{
 <ul>predict - the algorithm will predict where the bicycle will be after time \Delta{t}Δt. One basic way to predict the bicycle location after \Delta{t}Δt is to assume the bicycle's velocity is constant; thus the bicycle will have moved velocity * \Delta{t}Δt. In the extended Kalman filter lesson, we will assume the velocity is constant.</ul>
 <ul>update - the filter compares the "predicted" location with what the sensor measurement says. The predicted location and the measured location are combined to give an updated location. The Kalman filter will put more weight on either the predicted location or the measured location depending on the uncertainty of each value.</ul>
 then the car will receive another sensor measurement after a time period \Delta{t}Δt. The algorithm then does another predict and update step.
-</div>
 
 <hr>
 
