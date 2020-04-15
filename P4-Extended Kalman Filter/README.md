@@ -153,27 +153,33 @@ Radar measurements are blue circles with an arrow pointing in the direction of t
 ## Other references
 
 uWebSocketIO Starter Guide
+
 This project involve using an open source package called uWebSocketIO. This package facilitates the same connection between the simulator and code that was used in the Term 1 Behavioral Cloning Project, but now with C++. The package does this by setting up a web socket server connection from the C++ program to the simulator, which acts as the host. In the project repository there are two scripts for installing uWebSocketIO - one for Linux and the other for macOS.
 
 Note: Only uWebSocketIO branch e94b6e1, which the scripts reference, is compatible with the package installation.
 
 Linux Installation:
+
 From the project repository directory run the script: install-ubuntu.sh
 
 Mac Installation:
+
 From the project repository directory run the script: install-mac.sh
 
 Some users report needing to use cmakepatch.txt which is automatically referenced and is also located in the project repository directory.
 
-Windows Installation
+Windows Installation:
+
 Although it is possible to install uWebSocketIO to native Windows, the process is quite involved. Instead, you can use one of several Linux-like environments on Windows to install and run the package.
 
-Bash on Windows
+Bash on Windows:
+
 One of the newest features to Windows 10 users is an Ubuntu Bash environment that works great and is easy to setup and use. Here is a nice step by step guide for setting up the utility.
 
 We recommend using the newest version of Ubunut Bash 16.04, which is able to run the install-ubuntu.sh script without complications. The link here can help you check which version of Ubuntu Bash you are running, and also help you upgrade if you need to.
 
-Docker
+Docker:
+
 If you don't want to use Bash on Windows, or you don't have Windows 10, then you can use a virtual machine to run a Docker image that already contains all the project dependencies.
 
 First install Docker Toolbox for Windows.
