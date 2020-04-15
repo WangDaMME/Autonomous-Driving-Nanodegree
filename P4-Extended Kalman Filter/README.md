@@ -10,14 +10,14 @@ Key Concepts: Sensor Fusion, Extended Kalman Filter, Tracking
 
 The Kalman Filter algorithm will go through the following steps:
 
-<li>
-<ul>first measurement - the filter will receive initial measurements of the bicycle's position relative to the car. These measurements will come from a radar or lidar sensor.</ul>
+<ul>
+<li>first measurement - the filter will receive initial measurements of the bicycle's position relative to the car. These measurements will come from a radar or lidar sensor.</li>
 <ul>initialize state and covariance matrices - the filter will initialize the bicycle's position based on the first measurement.
-then the car will receive another sensor measurement after a time period Δt.</ul>
-<ul>predict - the algorithm will predict where the bicycle will be after time Δt. One basic way to predict the bicycle location after Δt is to assume the bicycle's velocity is constant; thus the bicycle will have moved velocity *Δt. In the extended Kalman filter lesson, we will assume the velocity is constant.</ul>
-<ul>update - the filter compares the "predicted" location with what the sensor measurement says. The predicted location and the measured location are combined to give an updated location. The Kalman filter will put more weight on either the predicted location or the measured location depending on the uncertainty of each value.</ul>
+then the car will receive another sensor measurement after a time period Δt.</li>
+<li>predict - the algorithm will predict where the bicycle will be after time Δt. One basic way to predict the bicycle location after Δt is to assume the bicycle's velocity is constant; thus the bicycle will have moved velocity *Δt. In the extended Kalman filter lesson, we will assume the velocity is constant.</li>
+<li>update - the filter compares the "predicted" location with what the sensor measurement says. The predicted location and the measured location are combined to give an updated location. The Kalman filter will put more weight on either the predicted location or the measured location depending on the uncertainty of each value.</li>
 then the car will receive another sensor measurement after a time period Δt. The algorithm then does another predict and update step.
-</li>
+</ul>
 
 <hr>
 
@@ -52,7 +52,7 @@ The c++ src code covers 3 main steps for programming a Kalman Filter:
     |   # R(Radar):  raw measurement data types sensor_type, rho_measured, phi_measured, rhodot_measured, timestamp, x_groundtruth, y_groundtruth, vxgroundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
     |   # L(Lidar):  sensor_type, x_measured, y_measured, timestamp, x_groundtruth, y_groundtruth, vx_groundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
     
-    
+ 
 This repository includes two files that can be used to set up and install [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems. For windows you can use either Docker, VMware, or even [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to install uWebSocketIO. Please see the uWebSocketIO Starter Guide page in the classroom within the EKF Project lesson for the required version and installation scripts.
 
 Once the install for uWebSocketIO is complete, the main program can be built and run by doing the following from the project top directory.
