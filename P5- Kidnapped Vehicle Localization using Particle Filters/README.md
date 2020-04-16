@@ -4,6 +4,7 @@
 Key Concepts: Localization, Particle Filters, Tracking
 
 <b>Algorithm Flowchart</b>
+
 The flowchart below represents the steps of the particle filter algorithm as well as its inputs.
 
 <div align="center">
@@ -11,6 +12,7 @@ The flowchart below represents the steps of the particle filter algorithm as wel
 </div>
 
 <b>Psuedo Code Steps</b>
+
 This is an outline of steps you will need to take with your code in order to implement a particle filter for localizing an autonomous vehicle. The pseudo code steps correspond to the steps in the algorithm flow chart, initialization, prediction, particle weight updates, and wheel resampling. 
 
 <div align="center">
