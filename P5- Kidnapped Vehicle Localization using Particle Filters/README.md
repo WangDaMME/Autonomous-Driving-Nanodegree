@@ -1,3 +1,36 @@
+# :checkered_flag: Project 5: Kidnapped Vehicle Localization using Particle Filters
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+
+Key Concepts: Localization, Particle Filters, Tracking
+
+<b>Algorithm Flowchart</b>
+The flowchart below represents the steps of the particle filter algorithm as well as its inputs.
+
+<div align="center">
+<img src="Result/particle_filter_algorithm.PNG" width="600" alt="Combined Image" />
+</div>
+
+<b>Psuedo Code Steps</b>
+This is an outline of steps you will need to take with your code in order to implement a particle filter for localizing an autonomous vehicle. The pseudo code steps correspond to the steps in the algorithm flow chart, initialization, prediction, particle weight updates, and wheel resampling. 
+
+<div align="center">
+<img src="Result/particle_filter_steps.PNG" width="600" alt="Combined Image" />
+</div>
+
+
+The Kalman Filter algorithm will go through the following steps:
+
+<ul>
+<li>first measurement - the filter will receive initial measurements of the bicycle's position relative to the car. These measurements will come from a radar or lidar sensor.</li>
+<li>initialize state and covariance matrices - the filter will initialize the bicycle's position based on the first measurement.
+then the car will receive another sensor measurement after a time period Δt.</li>
+<li>predict - the algorithm will predict where the bicycle will be after time Δt. One basic way to predict the bicycle location after Δt is to assume the bicycle's velocity is constant; thus the bicycle will have moved velocity *Δt. In the extended Kalman filter lesson, we will assume the velocity is constant.</li>
+<li>update - the filter compares the "predicted" location with what the sensor measurement says. The predicted location and the measured location are combined to give an updated location. The Kalman filter will put more weight on either the predicted location or the measured location depending on the uncertainty of each value.</li>
+then the car will receive another sensor measurement after a time period Δt. The algorithm then does another predict and update step.
+</ul>
+
+
+
 # Overview
 This repository contains all the code needed to complete the final project for the Localization course in Udacity's Self-Driving Car Nanodegree.
 
