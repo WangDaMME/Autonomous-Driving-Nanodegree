@@ -1,13 +1,16 @@
 # :checkered_flag: Project 5: Kidnapped Vehicle Localization using Particle Filters
+
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 Key Concepts: Localization, Particle Filters, Tracking
 
+<hr>
 
-# Overview
+### Overview
+
 The robot has been kidnapped and transported to a new location! Luckily it has a map of this location, a (noisy) GPS estimate of its initial location, and lots of (noisy) sensor and control data.
 
-In this project, I implemented a 2 dimensional particle filter algorithm in C++ to localize a moving vehicle. The particle filter is given a map and some initial localization information (analogous to what a GPS would provide). At each time step the filter will also get observation and control data, and calculating the errors of [x, y, YAW_R]
+In this project, I implemented a 2 dimensional particle filter algorithm in C++ to localize a moving vehicle. The particle filter is given a map and some initial localization information (analogous to what a GPS would provide). At each time step the filter will also get observation and control data, and calculating the errors of [x, y, yaw_rate] from the groundtruth data.
 
 
 <b>Algorithm Flowchart</b>
@@ -29,47 +32,6 @@ This is an outline of steps you will need to take with your code in order to imp
 ### Code Structure
 The directory structure of this repository is as follows:
 
-intializing - intializing Kalman filter variables
-Motion Prediction - predicting where our object is going to be after a time step, Δt
-Measurement Update - updating where our object is based on sensor measurements
-
-# Implementing the Particle Filter
-The directory structure of this repository is as follows:
-
-
-
-
-The only file you should modify is `particle_filter.cpp` in the `src` directory. The file contains the scaffolding of a `ParticleFilter` class and some associated methods. Read through the code, the comments, and the header file `particle_filter.h` to get a sense for what this code is expected to do.
-
-If you are interested, take a look at `src/main.cpp` as well. This file contains the code that will actually be running your particle filter and calling the associated methods.
-
-## Inputs to the Particle Filter
-You can find the inputs to the particle filter in the `data` directory.
-
-#### The Map*
-`map_data.txt` includes the position of landmarks (in meters) on an arbitrary Cartesian coordinate system. Each row has three columns
-1. x position
-2. y position
-3. landmark id
-
-### All other data the simulator provides, such as observations and controls.
-
-> * Map data provided by 3D Mapping Solutions GmbH.
-
-## Success Criteria
-If your particle filter passes the current grading code in the simulator (you can make sure you have the current version at any time by doing a `git pull`), then you should pass!
-
-The things the grading code is looking for are:
-
-
-1. **Accuracy**: your particle filter should localize vehicle position and yaw to within the values specified in the parameters `max_translation_error` and `max_yaw_error` in `src/main.cpp`.
-
-2. **Performance**: your particle filter should complete execution within the time of 100 seconds.
-
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
-
-
 ```
 root
 |   build.sh
@@ -80,36 +42,27 @@ root
 |
 |___data
 |   |   
-|   |   map_data.txt
+|   |   map_data.txt                 # Inputs to the Particle Filter
 |   
 |   
 |___src
     |   helper_functions.h
     |   main.cpp
-    |   map.h
-    |   particle_filter.cpp
+    |   map.h                        # Map Struct:the landmarks position (in m) on an arbitrary Cartesian coordinate system. {x,y, landmark_id}
+    |   particle_filter.cpp          # See below
     |   particle_filter.h
 ```    
-    
 
-    |- src                             # source code folder
-    |
-    │   ├── main.cpp                   # receive data measurement, calls Kalman Filter func, calls RMSE func
-    │     
-    │   ├── FunctionEKF.cpp            # initialize the filter, calls Prediction func, calls Update func, via ekf_ instanse
-    │
-    │   ├── kalman_filter.cpp          # define Prediction func, Update func for lidar, Update func for radar
-    │
-    │   ├── tools.cpp                  # define RMSE func, Jacobian func to linearize radar measurements
-    │
-    │   ├── measurement_package.h      # define raw measurement data types
-    │
-    |- data
-    │   ├── obj_pose-laser-radar-synthetic-input.txt      
-    |   # R(Radar):  raw measurement data types sensor_type, rho_measured, phi_measured, rhodot_measured, timestamp, x_groundtruth, y_groundtruth, vxgroundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
-    |   # L(Lidar):  sensor_type, x_measured, y_measured, timestamp, x_groundtruth, y_groundtruth, vx_groundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
-    
-
+`particle_filter.cpp` in the `src` directory contains the scaffolding of a `ParticleFilter` class and some associated methods. 
+<ol>
+    <li><b>Init</b> - It first initialzes #120 arbitary-located particles with arbitary Gaussian distribution noises. </li>
+    <li><b>Prediction</b> - Using homogenoues coordinates Transformation, the obserbation markers are transformed from the vehicle's coordinates to the map's coordinates, with respect to particles and Gaussian sensor noises are taken into account.  </li>
+    <li><b>Data Association</b> - Using homogenoues coordinates Transformation, the obserbation markers are transformed from the vehicle's coordinates to the map's coordinates, with respect to particles and Gaussian sensor noises are taken into account.  </li>
+    <li><b>Data Association</b> - Using homogenoues coordinates Transformation, the obserbation markers are transformed from the vehicle's coordinates to the map's coordinates, with respect to particles and Gaussian sensor noises are taken into account.  </li>
+    <li><b>Update Weights</b> - Using homogenoues coordinates Transformation, the obserbation markers are transformed from the vehicle's coordinates to the map's coordinates, with respect to particles and Gaussian sensor noises are taken into account.  </li>    
+    <li><b>Resampling</b> - Using homogenoues coordinates Transformation, the obserbation markers are transformed from the vehicle's coordinates to the map's coordinates, with respect to particles and Gaussian sensor noises are taken into account.  </li>    
+       
+</ol>
 
 ### Result
 The Term 2 Simulator includes a graphical version of the Kidnapped Vehicle Project. Running the simulator you can see the path that the car drives along with all of its landmark measurements. Included in the Kidnapped Vehicle project Github repository are program files that allow you to set up and run c++ uWebSocketIO, which is used to communicate with the simulator. The simulator provides the script for the noisy position data, vehicle controls, and noisy observations. The script feeds back the best particle state.
@@ -123,8 +76,15 @@ Below is a video of what it looks like when the simulator successfully is able t
 </div>
 
 ### Project Rubric
+
+1. **Accuracy**: your particle filter should localize vehicle position and yaw to within the values specified in the parameters `max_translation_error` and `max_yaw_error` in `src/main.cpp`.
+
+2. **Performance**: your particle filter should complete execution within the time of 100 seconds.
+
 <div>
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P5-%20Kidnapped%20Vehicle%20Localization%20using%20Particle%20Filters/Result/Project_Rubric.PNG">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P5-%20Kidnapped%20Vehicle%20Localization%20using%20Particle%20Filters/Result/Project_Rubric1.PNG">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P5-%20Kidnapped%20Vehicle%20Localization%20using%20Particle%20Filters/Result/Project_Rubric2.PNG">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P5-%20Kidnapped%20Vehicle%20Localization%20using%20Particle%20Filters/Result/Project_Rubric3.PNG">
 
 </div>
 
