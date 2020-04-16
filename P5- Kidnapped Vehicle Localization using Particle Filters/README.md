@@ -3,6 +3,13 @@
 
 Key Concepts: Localization, Particle Filters, Tracking
 
+
+# Overview
+The robot has been kidnapped and transported to a new location! Luckily it has a map of this location, a (noisy) GPS estimate of its initial location, and lots of (noisy) sensor and control data.
+
+In this project, I implemented a 2 dimensional particle filter algorithm in C++ to localize a moving vehicle. The particle filter is given a map and some initial localization information (analogous to what a GPS would provide). At each time step the filter will also get observation and control data, and calculating the errors of [x, y, YAW_R]
+
+
 <b>Algorithm Flowchart</b>
 
 The flowchart below represents the steps of the particle filter algorithm as well as its inputs.
@@ -19,32 +26,130 @@ This is an outline of steps you will need to take with your code in order to imp
 <img src="Result/particle_filter_stepss.PNG" width="600" alt="Combined Image" />
 </div>
 
+### Code Structure
+The directory structure of this repository is as follows:
 
-The Kalman Filter algorithm will go through the following steps:
+intializing - intializing Kalman filter variables
+Motion Prediction - predicting where our object is going to be after a time step, Δt
+Measurement Update - updating where our object is based on sensor measurements
 
-<ul>
-<li>first measurement - the filter will receive initial measurements of the bicycle's position relative to the car. These measurements will come from a radar or lidar sensor.</li>
-<li>initialize state and covariance matrices - the filter will initialize the bicycle's position based on the first measurement.
-then the car will receive another sensor measurement after a time period Δt.</li>
-<li>predict - the algorithm will predict where the bicycle will be after time Δt. One basic way to predict the bicycle location after Δt is to assume the bicycle's velocity is constant; thus the bicycle will have moved velocity *Δt. In the extended Kalman filter lesson, we will assume the velocity is constant.</li>
-<li>update - the filter compares the "predicted" location with what the sensor measurement says. The predicted location and the measured location are combined to give an updated location. The Kalman filter will put more weight on either the predicted location or the measured location depending on the uncertainty of each value.</li>
-then the car will receive another sensor measurement after a time period Δt. The algorithm then does another predict and update step.
-</ul>
+# Implementing the Particle Filter
+The directory structure of this repository is as follows:
 
 
 
-# Overview
-This repository contains all the code needed to complete the final project for the Localization course in Udacity's Self-Driving Car Nanodegree.
 
-#### Submission
-All you will need to submit is your `src` directory. You should probably do a `git pull` before submitting to verify that your project passes the most up-to-date version of the grading code (there are some parameters in `src/main.cpp` which govern the requirements on accuracy and run time).
+The only file you should modify is `particle_filter.cpp` in the `src` directory. The file contains the scaffolding of a `ParticleFilter` class and some associated methods. Read through the code, the comments, and the header file `particle_filter.h` to get a sense for what this code is expected to do.
 
-## Project Introduction
-Your robot has been kidnapped and transported to a new location! Luckily it has a map of this location, a (noisy) GPS estimate of its initial location, and lots of (noisy) sensor and control data.
+If you are interested, take a look at `src/main.cpp` as well. This file contains the code that will actually be running your particle filter and calling the associated methods.
 
-In this project you will implement a 2 dimensional particle filter in C++. Your particle filter will be given a map and some initial localization information (analogous to what a GPS would provide). At each time step your filter will also get observation and control data.
+## Inputs to the Particle Filter
+You can find the inputs to the particle filter in the `data` directory.
 
-## Running the Code
+#### The Map*
+`map_data.txt` includes the position of landmarks (in meters) on an arbitrary Cartesian coordinate system. Each row has three columns
+1. x position
+2. y position
+3. landmark id
+
+### All other data the simulator provides, such as observations and controls.
+
+> * Map data provided by 3D Mapping Solutions GmbH.
+
+## Success Criteria
+If your particle filter passes the current grading code in the simulator (you can make sure you have the current version at any time by doing a `git pull`), then you should pass!
+
+The things the grading code is looking for are:
+
+
+1. **Accuracy**: your particle filter should localize vehicle position and yaw to within the values specified in the parameters `max_translation_error` and `max_yaw_error` in `src/main.cpp`.
+
+2. **Performance**: your particle filter should complete execution within the time of 100 seconds.
+
+## How to write a README
+A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
+
+
+```
+root
+|   build.sh
+|   clean.sh
+|   CMakeLists.txt
+|   README.md
+|   run.sh
+|
+|___data
+|   |   
+|   |   map_data.txt
+|   
+|   
+|___src
+    |   helper_functions.h
+    |   main.cpp
+    |   map.h
+    |   particle_filter.cpp
+    |   particle_filter.h
+```    
+    
+
+    |- src                             # source code folder
+    |
+    │   ├── main.cpp                   # receive data measurement, calls Kalman Filter func, calls RMSE func
+    │     
+    │   ├── FunctionEKF.cpp            # initialize the filter, calls Prediction func, calls Update func, via ekf_ instanse
+    │
+    │   ├── kalman_filter.cpp          # define Prediction func, Update func for lidar, Update func for radar
+    │
+    │   ├── tools.cpp                  # define RMSE func, Jacobian func to linearize radar measurements
+    │
+    │   ├── measurement_package.h      # define raw measurement data types
+    │
+    |- data
+    │   ├── obj_pose-laser-radar-synthetic-input.txt      
+    |   # R(Radar):  raw measurement data types sensor_type, rho_measured, phi_measured, rhodot_measured, timestamp, x_groundtruth, y_groundtruth, vxgroundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
+    |   # L(Lidar):  sensor_type, x_measured, y_measured, timestamp, x_groundtruth, y_groundtruth, vx_groundtruth, vy_groundtruth, yaw_groundtruth, yawrate_groundtruth.
+    
+
+
+### Result
+The Term 2 Simulator includes a graphical version of the Kidnapped Vehicle Project. Running the simulator you can see the path that the car drives along with all of its landmark measurements. Included in the Kidnapped Vehicle project Github repository are program files that allow you to set up and run c++ uWebSocketIO, which is used to communicate with the simulator. The simulator provides the script for the noisy position data, vehicle controls, and noisy observations. The script feeds back the best particle state.
+
+The simulator can also display the best particle's sensed positions, along with the corresponding map ID associations. This can be extremely helpful to make sure transition and association calculations were done correctly.
+
+Below is a video of what it looks like when the simulator successfully is able to track the car to a particle. <b>Notice that the green laser sensors from the car nearly overlap the blue laser sensors from the particle </b>, this means that the particle transition calculations were done correctly.
+
+<div align="center">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P5-%20Kidnapped%20Vehicle%20Localization%20using%20Particle%20Filters/Result/Particle%20Filter.gif" width="480" height="320">
+</div>
+
+### Project Rubric
+<div>
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P5-%20Kidnapped%20Vehicle%20Localization%20using%20Particle%20Filters/Result/Project_Rubric.PNG">
+
+</div>
+
+
+### Dependencies
+Keep in mind that the minimum project dependency versions are:
+
+cmake: 3.5
+
+All OSes: click here for installation instructions
+
+make: 4.1
+
+Linux: make is installed by default on most Linux distros
+Mac: install Xcode command line tools to get make
+Windows: Click here for installation instructions
+
+gcc/g++: 5.4
+
+Linux: gcc / g++ is installed by default on most Linux distros
+Mac: same deal as make - install Xcode command line tools
+Windows: recommend using MinGW
+
+
+### Running the Code
 This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases)
 
 This repository includes two files that can be used to set up and install uWebSocketIO for either Linux or Mac systems. For windows you can use either Docker, VMware, or even Windows 10 Bash on Ubuntu to install uWebSocketIO.
@@ -66,8 +171,6 @@ Alternatively some scripts have been included to streamline this process, these 
 Tips for setting up your environment can be found [here](https://classroom.udacity.com/nanodegrees/nd013/parts/40f38239-66b6-46ec-ae68-03afd8a601c8/modules/0949fca6-b379-42af-a919-ee50aa304e6a/lessons/f758c44c-5e40-4e01-93b5-1a82aa4e044f/concepts/23d376c7-0195-4276-bdf0-e02f1f3c665d)
 
 Note that the programs that need to be written to accomplish the project are src/particle_filter.cpp, and particle_filter.h
-
-The program main.cpp has already been filled out, but feel free to modify it.
 
 Here is the main protocol that main.cpp uses for uWebSocketIO in communicating with the simulator.
 
@@ -116,63 +219,3 @@ OUTPUT: values provided by the c++ program to the simulator
 
 ["best_particle_sense_y"] <= list of sensed y positions
 
-
-Your job is to build out the methods in `particle_filter.cpp` until the simulator output says:
-
-```
-Success! Your particle filter passed!
-```
-
-# Implementing the Particle Filter
-The directory structure of this repository is as follows:
-
-```
-root
-|   build.sh
-|   clean.sh
-|   CMakeLists.txt
-|   README.md
-|   run.sh
-|
-|___data
-|   |   
-|   |   map_data.txt
-|   
-|   
-|___src
-    |   helper_functions.h
-    |   main.cpp
-    |   map.h
-    |   particle_filter.cpp
-    |   particle_filter.h
-```
-
-The only file you should modify is `particle_filter.cpp` in the `src` directory. The file contains the scaffolding of a `ParticleFilter` class and some associated methods. Read through the code, the comments, and the header file `particle_filter.h` to get a sense for what this code is expected to do.
-
-If you are interested, take a look at `src/main.cpp` as well. This file contains the code that will actually be running your particle filter and calling the associated methods.
-
-## Inputs to the Particle Filter
-You can find the inputs to the particle filter in the `data` directory.
-
-#### The Map*
-`map_data.txt` includes the position of landmarks (in meters) on an arbitrary Cartesian coordinate system. Each row has three columns
-1. x position
-2. y position
-3. landmark id
-
-### All other data the simulator provides, such as observations and controls.
-
-> * Map data provided by 3D Mapping Solutions GmbH.
-
-## Success Criteria
-If your particle filter passes the current grading code in the simulator (you can make sure you have the current version at any time by doing a `git pull`), then you should pass!
-
-The things the grading code is looking for are:
-
-
-1. **Accuracy**: your particle filter should localize vehicle position and yaw to within the values specified in the parameters `max_translation_error` and `max_yaw_error` in `src/main.cpp`.
-
-2. **Performance**: your particle filter should complete execution within the time of 100 seconds.
-
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
