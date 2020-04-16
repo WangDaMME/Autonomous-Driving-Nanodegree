@@ -1,8 +1,8 @@
-# :checkered_flag: Project 5: Kidnapped Vehicle Localization using Particle Filters
+# :checkered_flag: Project 5: Kidnapped Vehicle Localization by Particle Filters
 
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-Key Concepts: Localization, Particle Filters, Tracking
+Key Concepts: Localization, Particle Filters
 
 <hr>
 
