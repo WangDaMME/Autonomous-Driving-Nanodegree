@@ -14,7 +14,7 @@ The flowchart below represents the steps of the particle filter algorithm as wel
 This is an outline of steps you will need to take with your code in order to implement a particle filter for localizing an autonomous vehicle. The pseudo code steps correspond to the steps in the algorithm flow chart, initialization, prediction, particle weight updates, and wheel resampling. 
 
 <div align="center">
-<img src="Result/particle_filter_steps.PNG" width="600" alt="Combined Image" />
+<img src="Result/particle_filter_stepss.PNG" width="600" alt="Combined Image" />
 </div>
 
 
