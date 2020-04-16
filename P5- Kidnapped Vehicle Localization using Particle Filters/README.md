@@ -58,10 +58,9 @@ root
     <li><b>Init</b> - It first initialzes #120 arbitary-located particles with arbitary Gaussian distribution noises. </li>
     <li><b>Prediction</b> - Using homogenoues coordinates Transformation, the obserbation markers are transformed from the vehicle's coordinates to the map's coordinates, with respect to particles and Gaussian sensor noises are taken into account.  </li>
     <li><b>Data Association</b> - Using homogenoues coordinates Transformation, the obserbation markers are transformed from the vehicle's coordinates to the map's coordinates, with respect to particles and Gaussian sensor noises are taken into account.  </li>
-    <li><b>Data Association</b> - Using homogenoues coordinates Transformation, the obserbation markers are transformed from the vehicle's coordinates to the map's coordinates, with respect to particles and Gaussian sensor noises are taken into account.  </li>
-    <li><b>Update Weights</b> - Using homogenoues coordinates Transformation, the obserbation markers are transformed from the vehicle's coordinates to the map's coordinates, with respect to particles and Gaussian sensor noises are taken into account.  </li>    
-    <li><b>Resampling</b> - Using homogenoues coordinates Transformation, the obserbation markers are transformed from the vehicle's coordinates to the map's coordinates, with respect to particles and Gaussian sensor noises are taken into account.  </li>    
-       
+    <li><b>Data Association</b> - After observations have been transformed into the map's coordinate space, then the next step is to associate each transformed observation with a land mark identifier using Nearest Neighbor technique.  </li>
+    <li><b>Update Weights</b> - Update the particle weights based onw each measurement's Multivariate-Gaussian probability density [σx,σy] standard deviation. </li>    
+    <li><b>Resampling</b> - Using resampling weight to random particles based on its weight. The unlikely particles which has low importance of weight will be dropped out and the likely particles which has larger importance of weight will suffice by iterations.</li>        
 </ol>
 
 ### Result
@@ -72,7 +71,7 @@ The simulator can also display the best particle's sensed positions, along with 
 Below is a video of what it looks like when the simulator successfully is able to track the car to a particle. <b>Notice that the green laser sensors from the car nearly overlap the blue laser sensors from the particle </b>, this means that the particle transition calculations were done correctly.
 
 <div align="center">
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P5-%20Kidnapped%20Vehicle%20Localization%20using%20Particle%20Filters/Result/Particle%20Filter.gif" width="480" height="320">
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P5-%20Kidnapped%20Vehicle%20Localization%20using%20Particle%20Filters/Result/Particle%20Filter.gif" width="600" height="480">
 </div>
 
 ### Project Rubric
