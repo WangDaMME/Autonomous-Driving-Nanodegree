@@ -10,12 +10,28 @@ Key Concepts: Prediction,Behavior Planning with Finite State Machines (FSM) and 
 
 In this project, the goal is to design a path planner that is able to safely navigate around a virtual 3-lane highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. To accomplish this goal, A path planner is designed to create smooth, safe paths for the ego car to follow along inside its lane, avoid hitting other cars, and pass slower moving traffic all by using localization, sensor fusion, and map data. The car should try to go as close as possible to the 50 MPH (22.35m/s) speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 4.3mile (6946m) highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 10 m/s^3 for the consideration of safet0y and comfort.
 
+### Results
+#### Vehicle Changing Lane
 
 ```
 <div align="center">
 <img src="Result/Path_Planning.PNG" width="600" alt="Combined Image" />
 </div>
 ```
+
+#### Distance & Time without Incident 
+The vehicle has been driving safely 6.69 miles which is over the preset highway distance, 4.3mile (6946m) without incidents.
+
+```
+<div align="center">
+<img src="Result/Long_Run.PNG" width="600" alt="Combined Image" />
+</div>
+```
+
+#### Detailed Video Link
+
+<a href="https://www.youtube.com/watch?v=NSgxW-0lui8" target="_blank"> Youtube Link</a>
+
 
 ### Prerequisites
 
