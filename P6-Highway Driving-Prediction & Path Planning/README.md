@@ -33,9 +33,12 @@ The vehicle has been driving safely 6.69 miles which is over the preset highway 
 
 ### Project Rubrics
 
-```
-(Will be filled in after the Submission Review)
-```
+<div>
+<img src="Result/Rubric1.png" alt="Combined Image" />
+<img src="Result/Rubric2.png" alt="Combined Image" />
+<img src="Result/Rubric3.png" alt="Combined Image" />
+
+</div>
 
 ### Prerequisites
 
