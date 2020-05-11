@@ -21,11 +21,11 @@ In this project, the goal is to design a path planner that is able to safely nav
 #### Distance & Time without Incident 
 The vehicle has been driving safely 6.69 miles which is over the preset highway distance, 4.3mile (6946m) without incidents.
 
-```
+
 <div align="center">
 <img src="Result/Long_Run.PNG" width="600" alt="Combined Image" />
 </div>
-```
+
 
 #### Detailed Video Link
 
