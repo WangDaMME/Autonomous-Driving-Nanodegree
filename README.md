@@ -121,16 +121,17 @@ the path has processed since last time.
 #### Lane Change Logic
 
 The behavior of the ego vehicle is predicted based on the driving situations of cars around it. By iterating sensor_fusion variable , which contains all the information about the cars on the right-hand side of the road, first we need to figure out which lane {0:Left, 1: Middle, 2: Right} this certain checked vehicle is on. Then the problem falls into 3 sections. 
-<li>
-<ul>If the ego_vehicle is in the same lane with checked_vehilce, we need to see if the distance is less than safety_cushion. If not, the ego_car is safe to increase its speed to be close to the speed limit, 50mph. But if the distance is less, we need to jump to the following steps. </ul> 
 
-<ul> The left_lane is checked first because left is the fast lane so we want the ego_vehicle to shift to fast lane first without decreasing speed. By checking feasibility, we need to check if there the current lane is in the left lane in this way no further left lane to go && if there is a close car in left lane. </ul> 
+<ul>
+<li>If the ego_vehicle is in the same lane with checked_vehilce, we need to see if the distance is less than safety_cushion. If not, the ego_car is safe to increase its speed to be close to the speed limit, 50mph. But if the distance is less, we need to jump to the following steps. </li> 
 
-<ul> If left_lane change scheme does not work, we use the same logic to check the right lane. We need to check if there the current lane is in the right lane in this way no further right lane to go && if there is a close car in right lane. </ul> 
+<li> The left_lane is checked first because left is the fast lane so we want the ego_vehicle to shift to fast lane first without decreasing speed. By checking feasibility, we need to check if there the current lane is in the left lane in this way no further left lane to go && if there is a close car in left lane. </li> 
 
-<ul> Really, both change schemes of left_change and right_change do not work. We have no choice to be stuck in the current lane and decrease its speed to avoid collisions.</ul> 
+<li> If left_lane change scheme does not work, we use the same logic to check the right lane. We need to check if there the current lane is in the right lane in this way no further right lane to go && if there is a close car in right lane. </li> 
 
-<li>
+<li> Really, both change schemes of left_change and right_change do not work. We have no choice to be stuck in the current lane and decrease its speed to avoid collisions.</li> 
+
+</ul>
 
 ### Details
 
