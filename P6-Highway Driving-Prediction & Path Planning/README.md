@@ -36,7 +36,7 @@ The vehicle has been driving safely 6.69 miles which is over the preset highway 
 <div>
 <img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P6-Highway%20Driving-Prediction%20%26%20Path%20Planning/Result/Rubric1.PNG" />
 <img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P6-Highway%20Driving-Prediction%20%26%20Path%20Planning/Result/Rubric2.PNG" />
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P6-Highway%20Driving-Prediction%20%26%20Path%20Planning/Result/Rubric3.PNGg" />
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P6-Highway%20Driving-Prediction%20%26%20Path%20Planning/Result/Rubric3.PNG" />
 
 </div>
 
