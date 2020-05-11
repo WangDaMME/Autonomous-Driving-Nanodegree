@@ -29,7 +29,7 @@ The vehicle has been driving safely 6.69 miles which is over the preset highway 
 
 #### Detailed Video Link
 
-<a href="https://www.youtube.com/watch?v=NSgxW-0lui8" target="_blank"> <img border="0" src="video_link.jpg" width="50" height="50">
+<a href="https://www.youtube.com/watch?v=NSgxW-0lui8" target="_blank"> <img border="0" src="Result/video_link.jpg" width="50" height="50">
 Youtube Link</a>
 
 ### Project Rubrics
