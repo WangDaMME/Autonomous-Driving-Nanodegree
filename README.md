@@ -64,7 +64,6 @@ The highway's waypoints loop around so the frenet s value, distance along the ro
 ### Code Description
 
 #### Localization Data (No Noise)
-```
 | Localization Data         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | ["x"]       		| The car's x position in map coordinates   							| 
@@ -73,7 +72,7 @@ The highway's waypoints loop around so the frenet s value, distance along the ro
 | ["d"]	       	| The car's d position in frenet coordinates				|
 | ["yaw"]	      | The car's yaw angle in the map			|
 | ["speed"]					| The car's speed in MPH												|
-```
+
 
 #### Previous path data given to the Planner
 
