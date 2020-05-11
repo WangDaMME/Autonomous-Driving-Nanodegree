@@ -13,11 +13,10 @@ In this project, the goal is to design a path planner that is able to safely nav
 ### Results
 #### Vehicle Changing Lane
 
-```
+
 <div align="center">
-<img src="Result/Path_Planning.gif" width="600" alt="Combined Image" />
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P6-Highway%20Driving-Prediction%20%26%20Path%20Planning/Result/Path_Planning.gif" width="600" alt="Combined Image" />
 </div>
-```
 
 #### Distance & Time without Incident 
 The vehicle has been driving safely 6.69 miles which is over the preset highway distance, 4.3mile (6946m) without incidents.
