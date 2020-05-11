@@ -15,7 +15,7 @@ In this project, the goal is to design a path planner that is able to safely nav
 
 ```
 <div align="center">
-<img src="Result/Path_Planning.PNG" width="600" alt="Combined Image" />
+<img src="Result/Path_Planning.gif" width="600" alt="Combined Image" />
 </div>
 ```
 
