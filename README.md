@@ -16,7 +16,7 @@ One more thing. The speed limit has been increased from 30 mph to 100 mph. Get r
 #### PID Controller Implementation
 ```
 <div align="center">
-<img src="Result/Path_Planning.PNG" width="600" alt="Combined Image" />
+<img src="Result/pid_controller.gif" width="600" alt="Combined Image" />
 </div>
 ```
 
@@ -24,7 +24,7 @@ One more thing. The speed limit has been increased from 30 mph to 100 mph. Get r
 
 #### Detailed Video Link
 
-<a href="https://www.youtube.com/watch?v=NSgxW-0lui8" target="_blank"> Youtube Link</a>
+<a href="https://www.youtube.com/watch?v=4a7EJNfv-Z4" target="_blank"> Youtube Link</a>
 
 ### Project Rubrics
 
@@ -75,3 +75,11 @@ sudo chmod u+x {simulator_file_name}
 
 ### Code Description
 
+| Pid Gains Data         		|     Values	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Kp      		|  0.055   							| 
+| Ki        |  0.0005 	       |
+| Kd	     		|  3.5										  |
+
+
+#### Reference
