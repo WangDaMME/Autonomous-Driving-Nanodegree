@@ -82,11 +82,14 @@ sudo chmod u+x {simulator_file_name}
 * <b>Kd</b> - direvative gain, it adds the ability to "anticipate" error. The control signal can become large if the error begins sloping upward by accumulation, even while the magnitude of the error is still relatively small. This anticipation tends to add damping to the system, thereby decreasing overshoot. 
 
 
+To set up the initial 
+
 | Pid Gains Data         		|     Values	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Kp      		|  0.055   							| 
 | Ki        |  0.0005 	       |
 | Kd	     		|  3.5										  |
+
 
 
 #### Reference
