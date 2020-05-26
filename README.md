@@ -16,7 +16,7 @@ One more thing. The speed limit has been increased from 30 mph to 100 mph. Get r
 #### PID Controller Implementation
 ```
 <div align="center">
-<img src="Result/pid_controller.gif" width="600" alt="Combined Image" />
+<img src="Result/pid_controller.gif" width="600" alt="Result of pid controller" />
 </div>
 ```
 
@@ -73,7 +73,14 @@ sudo chmod u+x {simulator_file_name}
 4. Run it: `./pid`. 
 
 
-### Code Description
+### Tuning Hyperparameters
+
+* <b>Kp</b> - propotional gain, it proportionally increases the control signal for the same level of error and tends to cause the closed-loop system to respond more quickly, but also brings overshoot more.
+
+* <b>Ki</b> - integral gain, it tends to reduce steady-state error. But A drawback of the integral term is that it can make the system more sluggish (and oscillatory) since when the error signal changes sign.
+
+* <b>Kd</b> - direvative gain, it adds the ability to "anticipate" error. The control signal can become large if the error begins sloping upward by accumulation, even while the magnitude of the error is still relatively small. This anticipation tends to add damping to the system, thereby decreasing overshoot. 
+
 
 | Pid Gains Data         		|     Values	        					| 
 |:---------------------:|:---------------------------------------------:| 
