@@ -16,7 +16,7 @@ One more thing. The speed limit has been increased from 30 mph to 100 mph. Get r
 #### PID Controller Implementation
 
 <div align="center">
-<img src="Result/pid_controller.gif" width="600" alt="Result of pid controller" />
+<img src="Results/Tuning%20Log%20Files/pid_controller.gif" width="600" alt="Result of pid controller" />
 </div>
 
 #### Detailed Video Link
@@ -25,8 +25,12 @@ One more thing. The speed limit has been increased from 30 mph to 100 mph. Get r
 
 ### Project Rubrics
 
+<div>
+ 
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P7-PID%20Contoller/Results/Tuning%20Log%20Files/Rubric1.PNG" />
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P7-PID%20Contoller/Results/Tuning%20Log%20Files/Rubric2.PNG" />
 
-(Will be filled in after the Submission Review)
+</div>
 
 ### Tuning Hyperparameters
 
@@ -83,16 +87,6 @@ sudo chmod u+x {simulator_file_name}
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./pid`. 
-
-### Project Rubrics
-
-<div>
- 
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P7-PID%20Contoller/Results/Tuning%20Log%20Files/Rubric1.PNG" />
-<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P7-PID%20Contoller/Results/Tuning%20Log%20Files/Rubric2.PNG" />
-
-</div>
-
 
 #### Reference
 1. http://ctms.engin.umich.edu/CTMS/index.php?example=Introduction&section=ControlPID
