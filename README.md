@@ -81,8 +81,9 @@ sudo chmod u+x {simulator_file_name}
 
 * <b>Kd</b> - direvative gain, it adds the ability to "anticipate" error. The control signal can become large if the error begins sloping upward by accumulation, even while the magnitude of the error is still relatively small. This anticipation tends to add damping to the system, thereby decreasing overshoot. 
 
+To set up the initial assumptions, I first set random values for Kp, Ki, Kd and observe the changing trends of P_error, I_error, D_error. From the log, we observed that I_error keeps increasing because of accumulation of +=cte in range (0,200) and Kp starts from 0.7598 and changes from -3.5 to +3.5; and D_error barely changes from 0 to maximum -0.15. Take the maximum params, -3.5Kp+0.1Kd+200Ki, I want to keep the effect of I_error small, 200Ki=0.1--> Ki=0.0005; Kd=4.0 and Kp=1/7=0.143.
 
-To set up the initial 
+
 
 | Pid Gains Data         		|     Values	        					| 
 |:---------------------:|:---------------------------------------------:| 
