@@ -31,6 +31,22 @@ One more thing. The speed limit has been increased from 30 mph to 100 mph. Get r
 ```
 (Will be filled in after the Submission Review)
 
+### Tuning Hyperparameters
+
+* <b>Kp</b> - propotional gain, it proportionally increases the control signal for the same level of error and tends to cause the closed-loop system to respond more quickly, but also brings overshoot more.
+
+* <b>Ki</b> - integral gain, it tends to reduce steady-state error. But A drawback of the integral term is that it can make the system more sluggish (and oscillatory) since when the error signal changes sign.
+
+* <b>Kd</b> - direvative gain, it adds the ability to "anticipate" error. The control signal can become large if the error begins sloping upward by accumulation, even while the magnitude of the error is still relatively small. This anticipation tends to add damping to the system, thereby decreasing overshoot. 
+
+To set up the initial assumptions, I first set random values for Kp, Ki, Kd and observe the changing trends of P_error, I_error, D_error. From the log, we observed that I_error keeps increasing because of accumulation of +=cte in range (0,200) and Kp starts from 0.7598 and changes from -3.5 to +3.5; and D_error barely changes from 0 to maximum -0.15. Take the maximum params, -3.5Kp+0.1Kd+200Ki, I want to keep the effect of I_error small, 200Ki=0.1--> Ki=0.0005; Then try to set this equation to be 0, Kd=4.0 and Kp=1/7=0.143. After manual tuning, the PID controller gains are listed below.
+
+
+| Pid Gains Data         		|     Values	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Kp      		|  0.143   							| 
+| Ki        |  0.0005 	       |
+| Kd	     		|  4.0									  |
 
 
 ### Prerequisites
@@ -71,26 +87,6 @@ sudo chmod u+x {simulator_file_name}
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./pid`. 
-
-
-### Tuning Hyperparameters
-
-* <b>Kp</b> - propotional gain, it proportionally increases the control signal for the same level of error and tends to cause the closed-loop system to respond more quickly, but also brings overshoot more.
-
-* <b>Ki</b> - integral gain, it tends to reduce steady-state error. But A drawback of the integral term is that it can make the system more sluggish (and oscillatory) since when the error signal changes sign.
-
-* <b>Kd</b> - direvative gain, it adds the ability to "anticipate" error. The control signal can become large if the error begins sloping upward by accumulation, even while the magnitude of the error is still relatively small. This anticipation tends to add damping to the system, thereby decreasing overshoot. 
-
-To set up the initial assumptions, I first set random values for Kp, Ki, Kd and observe the changing trends of P_error, I_error, D_error. From the log, we observed that I_error keeps increasing because of accumulation of +=cte in range (0,200) and Kp starts from 0.7598 and changes from -3.5 to +3.5; and D_error barely changes from 0 to maximum -0.15. Take the maximum params, -3.5Kp+0.1Kd+200Ki, I want to keep the effect of I_error small, 200Ki=0.1--> Ki=0.0005; Kd=4.0 and Kp=1/7=0.143.
-
-
-
-| Pid Gains Data         		|     Values	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Kp      		|  0.055   							| 
-| Ki        |  0.0005 	       |
-| Kd	     		|  3.5										  |
-
 
 
 #### Reference
