@@ -14,21 +14,18 @@ One more thing. The speed limit has been increased from 30 mph to 100 mph. Get r
 
 ### Results
 #### PID Controller Implementation
-```
+
 <div align="center">
 <img src="Result/pid_controller.gif" width="600" alt="Result of pid controller" />
 </div>
-```
-
-```
 
 #### Detailed Video Link
 
-<a href="https://www.youtube.com/watch?v=4a7EJNfv-Z4" target="_blank"> Youtube Link</a>
+<a href="https://www.youtube.com/watch?v=0SMD95ovSng" target="_blank"> Youtube Link</a>
 
 ### Project Rubrics
 
-```
+
 (Will be filled in after the Submission Review)
 
 ### Tuning Hyperparameters
@@ -49,7 +46,6 @@ To set up the initial assumptions, I first set random values for Kp, Ki, Kd and 
 | Kd	     		|  4.0									  |
 
 
-### Prerequisites
 
 ####   Simulator.
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2).  
@@ -87,6 +83,15 @@ sudo chmod u+x {simulator_file_name}
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./pid`. 
+
+### Project Rubrics
+
+<div>
+ 
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P7-PID%20Contoller/Results/Tuning%20Log%20Files/Rubric1.PNG" />
+<img src="https://github.com/WangDaMME/Autonomous-Driving-Nanodegree/blob/master/P7-PID%20Contoller/Results/Tuning%20Log%20Files/Rubric2.PNG" />
+
+</div>
 
 
 #### Reference
