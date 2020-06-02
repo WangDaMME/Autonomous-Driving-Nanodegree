@@ -115,7 +115,7 @@ as a markdown or pdf file. It should explain the structure of your network and t
     |
     |- drive.py          # The script to drive the car. 
     │     
-    |- model.h5          # The saved model. [documentation]: (https://keras.io/getting_started/faq/)
+    |- model.h5          # The saved model.  [document](https://review.udacity.com/#!/rubrics/432/view)
     │
     |- video.py          # The script to create the video recording when in autonomous mode..
     │
@@ -175,7 +175,7 @@ My project includes the following files:
 * writeup_report.md or writeup_report.pdf summarizing the results
 
 #### 2. Submission includes functional code
-Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
+Using the Udacity [rubric points](https://review.udacity.com/#!/rubrics/432/view) provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
 ```sh
 python drive.py model.h5
 ```
