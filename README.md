@@ -18,7 +18,6 @@ One more thing. The speed limit has been increased from 30 mph to 100 mph. Get r
 
 
 ### Results
-#### PID Controller Implementation
 ```
 <div align="center">
 <img src="Result/pid_controller.gif" width="600" alt="Result of pid controller" />
@@ -115,7 +114,7 @@ as a markdown or pdf file. It should explain the structure of your network and t
     |
     |- drive.py          # The script to drive the car. 
     │     
-    |- model.h5          # The saved model.  [document](https://review.udacity.com/#!/rubrics/432/view)
+    |- model.h5          # The saved model.  
     │
     |- video.py          # The script to create the video recording when in autonomous mode..
     │
