@@ -110,7 +110,7 @@ as a markdown or pdf file. It should explain the structure of your network and t
     |
     |- drive.py          # The script to drive the car. 
     │     
-    |- model.h5          # The saved model. [documentation](https://keras.io/getting_started/faq/)
+    |- model.h5          # The saved model. [documentation]: (https://keras.io/getting_started/faq/)
     │
     |- video.py          # The script to create the video recording when in autonomous mode..
     │
