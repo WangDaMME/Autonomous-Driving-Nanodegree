@@ -2,7 +2,7 @@
 
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-Key Concepts: Machine Learning, Deep Learning, Transfer Learning, Tensorflow, Keras
+Key Concepts: Machine Learning, Deep Learning, Neural Networks, Transfer Learning, Tensorflow, Keras, Image Classification.
 <hr>
 
 ### Overview
@@ -10,6 +10,12 @@ Key Concepts: Machine Learning, Deep Learning, Transfer Learning, Tensorflow, Ke
 In this project, I implemented a PID controller in C++ to tune the PID hyperparameters to maneuver the vehicle around the track!
 The simulator will provide you the cross track error (CTE) and the velocity (mph) in order to compute the appropriate steering angle.
 One more thing. The speed limit has been increased from 30 mph to 100 mph. Get ready to channel your inner Vin Diesel and try to drive SAFELY as fast as possible! NOTE: you don't have to meet a minimum speed to pass.
+
+
+
+[documentation]: (https://keras.io/getting_started/faq/)
+
+
 
 ### Results
 #### PID Controller Implementation
@@ -95,7 +101,6 @@ sudo chmod u+x {simulator_file_name}
 
 
 as a markdown or pdf file. It should explain the structure of your network and training approach. The write-up must also include examples of images from the dataset in the discussion of the characteristics of the dataset. While we recommend using English for good practice, writing in any language is acceptable (reviewers will translate). There is no minimum word count so long as there are complete descriptions of the problems and the strategies. See the rubric and the writeup_template.md for more details about the expectations.
-
 
 
 
